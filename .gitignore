@@ -5,6 +5,7 @@ linux/concatenate
 linux/net_blog_adj_directed_dense.txt
 linux/normalize
 linux/reconstruct
+linux/line
 release-youtube-links.txt
 *.txt
 
