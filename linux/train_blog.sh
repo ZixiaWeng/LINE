@@ -12,3 +12,4 @@ g++ -lm -pthread -Ofast -march=native -Wall -funroll-loops -ffast-math -Wno-unus
 ./normalize -input vec_2nd_wo_norm.txt -output vec_2nd.txt -binary 1
 ./concatenate -input1 vec_1st.txt -input2 vec_2nd.txt -output vec_all.txt -binary 1
 
+
