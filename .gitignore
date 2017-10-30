@@ -1,0 +1,9 @@
+*.o
+gsl-2.4
+linux/blog_adj_directed.txt
+linux/concatenate
+linux/net_blog_adj_directed_dense.txt
+linux/normalize
+linux/reconstruct
+linux/train_blog.sh
+release-youtube-links.txt
