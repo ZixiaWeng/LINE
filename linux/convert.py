@@ -1,8 +1,10 @@
 import numpy as np
+import sys
+#with open(sys.argv[1], 'r') as f:
 
 def convert():
-    b = np.fromfile('line_blog.txt', dtype=np.int32)
+    b = np.fromfile(sys.argv[2], dtype=np.int32)
 #	b.reshape(,200)
-    np.save('line_blog.npy',b)
+    np.save(sys.argv[4],b)
 
 convert()
