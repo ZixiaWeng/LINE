@@ -149,6 +149,7 @@ void TrainModel() {
 		len = 0;
 		for (b = 0; b < vector_dim2; b++) len += vec2[b + a * vector_dim2] * vec2[b + a * vector_dim2];
 		len = sqrt(len);
+		fprintf(fo, "%lf ", len)
 		for (b = 0; b < vector_dim2; b++) vec2[b + a * vector_dim2] /= len;
 
 		if (binary)
