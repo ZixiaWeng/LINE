@@ -161,9 +161,9 @@ void TrainModel() {
 		else
 		{
 			for (b = 0; b < vector_dim1; b++)
-				fprintf(fo, "%lf ", vec1[a * vector_dim1 + b]);
+				fprintf(fo, "%.12lf ", vec1[a * vector_dim1 + b]);
 			for (b = 0; b < vector_dim2; b++)
-				fprintf(fo, "%lf ", vec2[a * vector_dim2 + b]);
+				fprintf(fo, "%.12lf ", vec2[a * vector_dim2 + b]);
 		}
 		fprintf(fo, "\n");
 	}
