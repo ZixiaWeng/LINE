@@ -119,7 +119,7 @@ void ReadVector()
 	{
 	  fread(&f_num, sizeof(float), 1, fi);
 	  vec2.push_back((real)f_num);
-	  //		    printf("%lf ", vec2[c+1]);
+	  printf("%lf ", vec2[c+1]);
 	}
   }
   fclose(fi);
@@ -169,10 +169,10 @@ void TrainModel() {
 	else
 	{
 	  for (b = 0; b < vector_dim1; b++)
-	  fprintf(fo, "%lf ", vec1[a * vector_dim1 + b]);
+		fprintf(fo, "%lf ", vec1[a * vector_dim1 + b]);
 	  for (b = 0; b < vector_dim2; b++){
 		fprintf(fo, "%lf ", vec2[a * vector_dim2 + b]);
-//		printf("%lf ", vec2[a * vector_dim2 + b]);
+		printf("%lf ", vec2[a * vector_dim2 + b]);
 	  }
 	}
 	fprintf(fo, "\n");

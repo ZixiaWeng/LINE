@@ -15,8 +15,9 @@ void Normalize()
 {
 	long long num_vertices, vector_dim, a, b;
 	char name[MAX_STRING], ch;
-	real *vec;
-	double len;
+//	real *vec;
+    std::vector<real> vec;
+    double len;
 
 	FILE *fi, *fo;
 
@@ -24,16 +25,23 @@ void Normalize()
 	fo = fopen(output_file, "wb");
 
 	fscanf(fi, "%lld %lld", &num_vertices, &vector_dim);
-	vec = (real *)malloc(vector_dim * sizeof(real));
+//	vec = (real *)malloc(vector_dim * sizeof(real));
+  
 	fprintf(fo, "%lld %lld\n", num_vertices, vector_dim);
 	for (a = 0; a < num_vertices; a++)
 	{
 		fscanf(fi, "%s%c", name, &ch);
-		for (b = 0; b < vector_dim; b++) fread(&vec[b], sizeof(real), 1, fi);
+	    for (b = 0; b < vector_dim; b++) {
+		  real temp;
+//		  fread(&temp, sizeof(real), 1, fi);
+		  fscanf(fi, "%f", &temp);
+		  vec.push_back(temp);
+
+	    }
 		len = 0;
-		for (b = 0; b < vector_dim; b++) len += vec[b] * vec[b];
+		for (b = 0; b < vector_dim; b++) len += vec[a*vector_dim + b] * vec[a*vector_dim + b];
 		len = sqrt(len);
-		for (b = 0; b < vector_dim; b++) vec[b] /= len;
+		for (b = 0; b < vector_dim; b++) vec[a*vector_dim + b] /= len;
 
 		fprintf(fo, "%s ", name);
 		if (binary)
@@ -44,11 +52,11 @@ void Normalize()
 		else
 		{
 			for (b = 0; b < vector_dim; b++)
-				fprintf(fo, "%lf ", vec[b]);
+				fprintf(fo, "%lf ", vec[a*vector_dim + b]);
 		}
 		fprintf(fo, "\n");
 	}
-	free(vec);
+//	free(vec);
 	fclose(fi);
 	fclose(fo);
 }
