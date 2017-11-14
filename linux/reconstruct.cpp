@@ -131,9 +131,12 @@ void ReadData()
 		}
 
 		vid = SearchHashTable(name_v1);
-		if (vid == -1) vid = AddVertex(name_v1);
+	    if (vid == -1) {
+		  vid = AddVertex(name_v1);
+		}
+//		else{ printf("xxxxxxxx %s\n", name_v1);}
 		vertex[vid].degree += weight;
-
+//	  printf("weight %lf\n", weight);
 		vid = SearchHashTable(name_v2);
 		if (vid == -1) vid = AddVertex(name_v2);
 		vertex[vid].degree += weight;
@@ -262,6 +265,7 @@ void Reconstruct()
 		{
 			if (i == pst) break;
 			fprintf(fo, "%s\t%s\t%.6lf\n", vertex[sv].name, vertex[rank_list[i].vid].name, rank_list[i].weight);
+//		    printf("%s\t%s\t\n", vertex[sv].name, vertex[rank_list[i].vid].name);
 			num_edges_renet++;
 		}
 	}

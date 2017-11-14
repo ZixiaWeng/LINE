@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A53671191FB3D71D006E298E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A53671181FB3D71D006E298E /* main.cpp */; };
+		A5799B5B1FBA706F00FD7C68 /* CheckIfConnected.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A5799B5A1FBA706F00FD7C68 /* CheckIfConnected.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +24,15 @@
 
 /* Begin PBXFileReference section */
 		A53671151FB3D71D006E298E /* Concate */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Concate; sourceTree = BUILT_PRODUCTS_DIR; };
-		A53671181FB3D71D006E298E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A536711F1FB3D74A006E298E /* concatenate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = concatenate.cpp; path = ../../linux/concatenate.cpp; sourceTree = "<group>"; };
+		A53BEC0A1FB3FD2D00C3E5FC /* line.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = line.cpp; path = ../../linux/line.cpp; sourceTree = "<group>"; };
+		A53BEC0E1FB401D900C3E5FC /* libgsl.23.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgsl.23.dylib; path = ../../../../../usr/local/lib/libgsl.23.dylib; sourceTree = "<group>"; };
+		A53BEC0F1FB401D900C3E5FC /* libgsl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgsl.a; path = ../../../../../usr/local/lib/libgsl.a; sourceTree = "<group>"; };
+		A53BEC101FB401D900C3E5FC /* libgsl.la */ = {isa = PBXFileReference; lastKnownFileType = text; name = libgsl.la; path = ../../../../../usr/local/lib/libgsl.la; sourceTree = "<group>"; };
+		A53BEC141FB403AD00C3E5FC /* reconstruct.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = reconstruct.cpp; path = ../../linux/reconstruct.cpp; sourceTree = "<group>"; };
+		A53BEC161FB4054B00C3E5FC /* test_adj_undirected.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = test_adj_undirected.txt; path = ../../../../Desktop/test_adj_undirected.txt; sourceTree = "<group>"; };
+		A54EC6D61FB3E6DE009B5DB8 /* normalize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = normalize.cpp; path = ../../linux/normalize.cpp; sourceTree = "<group>"; };
+		A5799B5A1FBA706F00FD7C68 /* CheckIfConnected.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CheckIfConnected.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,7 @@
 			children = (
 				A53671171FB3D71D006E298E /* Concate */,
 				A53671161FB3D71D006E298E /* Products */,
+				A53BEC0D1FB401D900C3E5FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +66,24 @@
 		A53671171FB3D71D006E298E /* Concate */ = {
 			isa = PBXGroup;
 			children = (
-				A53671181FB3D71D006E298E /* main.cpp */,
+				A53BEC0A1FB3FD2D00C3E5FC /* line.cpp */,
+				A53BEC141FB403AD00C3E5FC /* reconstruct.cpp */,
+				A53BEC161FB4054B00C3E5FC /* test_adj_undirected.txt */,
+				A5799B5A1FBA706F00FD7C68 /* CheckIfConnected.cpp */,
+				A54EC6D61FB3E6DE009B5DB8 /* normalize.cpp */,
+				A536711F1FB3D74A006E298E /* concatenate.cpp */,
 			);
 			path = Concate;
+			sourceTree = "<group>";
+		};
+		A53BEC0D1FB401D900C3E5FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A53BEC0E1FB401D900C3E5FC /* libgsl.23.dylib */,
+				A53BEC0F1FB401D900C3E5FC /* libgsl.a */,
+				A53BEC101FB401D900C3E5FC /* libgsl.la */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A53671191FB3D71D006E298E /* main.cpp in Sources */,
+				A5799B5B1FBA706F00FD7C68 /* CheckIfConnected.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +153,7 @@
 		A536711A1FB3D71D006E298E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -174,17 +198,36 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-I/usr/local/include",
+					"-L/usr/local/lib",
+					"-lgsl",
+					"-lgslcblas",
+					"-I/usr/local/include",
+					"-L/usr/local/lib",
+					"-lgsl",
+					"-lgslcblas",
+					"-I/usr/local/include",
+					"-L/usr/local/lib",
+					"-lgsl",
+					"-lgslcblas",
+				);
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
 		A536711B1FB3D71D006E298E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -223,9 +266,28 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CPLUSPLUSFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-I/usr/local/include",
+					"-L/usr/local/lib",
+					"-lgsl",
+					"-lgslcblas",
+					"-I/usr/local/include",
+					"-L/usr/local/lib",
+					"-lgsl",
+					"-lgslcblas",
+					"-I/usr/local/include",
+					"-L/usr/local/lib",
+					"-lgsl",
+					"-lgslcblas",
+				);
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
