@@ -9,7 +9,7 @@
 
 #define MAX_STRING 100
 
-const int hash_table_size = 30000000;
+const int hash_table_size = 3000000;
 
 typedef float real;                    // Precision of float numbers
 
@@ -52,6 +52,7 @@ unsigned int Hash(char *key)
 	{
 		hash = hash * seed + (*key++);
 	}
+//    printf("%u--",hash);
 	return hash % hash_table_size;
 }
 
@@ -122,8 +123,9 @@ void ReadData()
 	num_vertices = 0;
 	for (int k = 0; k != num_edges; k++)
 	{
-		fscanf(fin, "%s %s %lf", name_v1, name_v2, &weight);
-
+		fscanf(fin, "%s %s", name_v1, name_v2);
+//	    printf("%s %s %lf", name_v1, name_v2, weight);
+	    weight = 1;
 		if (k % 10000 == 0)
 		{
 			printf("Reading edges: %.3lf%%%c", k / (double)(num_edges + 1) * 100, 13);
@@ -136,7 +138,7 @@ void ReadData()
 		}
 //		else{ printf("xxxxxxxx %s\n", name_v1);}
 		vertex[vid].degree += weight;
-//	  printf("weight %lf\n", weight);
+	    printf("weight %lf\n", weight);
 		vid = SearchHashTable(name_v2);
 		if (vid == -1) vid = AddVertex(name_v2);
 		vertex[vid].degree += weight;
