@@ -28,10 +28,11 @@ def convert_embed_to_np(emb_file, ignore_last=False):
     for line in lines[1:]:
         t = line.rstrip().split()
         r = int(t[0])
-        if r == n:
+        if r-1 == s:
+            print r
             raise RuntimeError('Shouls be 0-based!')
         li = [ float(x) for x in t[1:] ]
-        mat[r] = li
+        mat[r-1] = li
 
     return mat
 

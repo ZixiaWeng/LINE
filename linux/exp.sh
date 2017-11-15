@@ -1,7 +1,7 @@
 #!/bin/sh
 
-size=50
-exp="test"
+size=100
+exp="blog"
 foldername="${exp}_$(date +%Y%m%d_%H%M%S)"
 echo $foldername
 mkdir -p  "$foldername"
@@ -13,6 +13,6 @@ export LD_LIBRARY_PATH=/home/yba/zixia/gsl/lib
 #./normalize -input "$foldername"/vec_1st_wo_norm.txt -output "$foldername"/vec_1st.txt -binary 0
 #./normalize -input "$foldername"/vec_2nd_wo_norm.txt -output "$foldername"/vec_2nd.txt -binary 0
 #./concatenate -input1 "$foldername"/vec_1st_wo_norm.txt -input2 "$foldername"/vec_2nd_wo_norm.txt -output "$foldername"/line_"${exp}".txt -binary 0
-python concate.py "$foldername"/vec_1st_wo_norm.txt "$foldername"/vec_2nd_wo_norm.txt "$foldername"/line_"${exp}".npy
+python concate.py "$foldername"/vec_1st_wo_norm.txt "$foldername"/vec_2nd_wo_norm.txt "$foldername"/line_"${exp}".npy "$foldername"/line_"${exp}".txt
 #python convert.py -input "$foldername"/line_"${exp}".txt -output "$foldername"/line_"${exp}".npy
 
