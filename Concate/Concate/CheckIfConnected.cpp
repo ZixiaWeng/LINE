@@ -29,7 +29,7 @@ public:
   
   // The main function that returns true if the graph is strongly
   // connected, otherwise false
-  bool isSC();
+  bool isCon();
   
   // Function that returns reverse (or transpose) of this graph
   Graph* getTranspose();
@@ -72,8 +72,8 @@ void Graph::addEdge(int v, int w)
   if ( !directed) adj[w].push_back(v);
 }
 
-// The main function that returns true if graph is strongly connected
-bool Graph::isSC()
+// The main function that returns true if graph is connected
+bool Graph::isCon()
 {
   // Step 1: Mark all the vertices as not visited (For first DFS)
   
@@ -121,7 +121,7 @@ int main()
   g1.addEdge(0, 1);
   g1.addEdge(0, 2);
   g1.addEdge(3, 4);
-  g1.isSC() ? std::cout << "Yes\n" :
+  g1.isCon() ? std::cout << "Yes\n" :
   std::cout << "No\n";
   
   // Example II: connected (un-directed) graph:
@@ -133,7 +133,7 @@ int main()
   g3.addEdge(4, 0);
   g3.addEdge(1, 2);
   g3.addEdge(2, 3);
-  g3.isSC() ? std::cout << "Yes\n" :
+  g3.isCon() ? std::cout << "Yes\n" :
   std::cout << "No\n";
   
   
@@ -145,7 +145,7 @@ int main()
   g5.addEdge(0, 1);
   g5.addEdge(1, 2);
   g5.addEdge(2, 3);
-  g5.isSC() ? std::cout << "Yes\n" :
+  g5.isCon() ? std::cout << "Yes\n" :
   std::cout << "No\n";
   
   // Example IV: cora graph
@@ -156,7 +156,7 @@ int main()
   {
 	cora.addEdge(a, b);
   }
-  cora.isSC() ? std::cout << "cora: Yes\n" :
+  cora.isCon() ? std::cout << "cora: Yes\n" :
   std::cout << "cora: No\n";
   return 0;
 }

@@ -2,6 +2,18 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Concate.xcodeproj">
+      location = "self:">
+   </FileRef>
+   <FileRef
+      location = "group:../../linux/concatenate.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../../linux/line.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../../linux/normalize.cpp">
+   </FileRef>
+   <FileRef
+      location = "group:../../linux/reconstruct.cpp">
    </FileRef>
 </Workspace>

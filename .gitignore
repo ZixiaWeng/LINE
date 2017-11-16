@@ -11,4 +11,4 @@ linux/line
 .DS_Store
 *.npy
 *.py~
-
+*.xcodeproj
