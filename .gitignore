@@ -12,3 +12,4 @@ linux/line
 *.npy
 *.py~
 *.xcodeproj
+data/cora_adj.npy~
