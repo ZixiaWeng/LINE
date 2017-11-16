@@ -4,6 +4,7 @@
 
 This is the update version of LINE for embedding the large-scale information networks. Based on the work from Jian Tang, I and @Yunsheng Bai refactored some of the C++ code, removed the normalize part at the end(We contacted the author for suggestions and removed it) and added some python files to handle both directed npy/txt and undirected npy/txt files. The new LINE works good on arxiv/cora/blog dataset and we will test on Youtube in the near future.
 
+Paper: https://arxiv.org/pdf/1503.03578.pdf
 ##Introduction by the original author
 
 This is the LINE toolkit developed for embedding very large-scale information networks. It is suitable to a variety of networks including directed, undirected, binary or weighted edges. The LINE model is quite efficient, which is able to embed a network with millions of vertices and billions of edges on a single machine within a few hours.
