@@ -91,9 +91,26 @@ def flicker():
             fout.write('%s\t%s\t%s\n' % (id0, id1, '1'))
             fout.write('%s\t%s\t%s\n' % (id1, id0, '1'))
 
+def youtube():
+    with open('youtube_adj.txt') as fin, open('youtube_adj_undirected.txt', 'w') as fout:
+        firstLine = True
+        for line in fin:
+            if firstLine:
+                firstLine = False
+            else:
+                ls = line.rstrip().split(' ')
+                print '@@@',ls
+                assert(len(ls)==2)
+                id0 = int(ls[0])
+                id1 = int(ls[1])
+                # line = line.replace(",", "\t")
+                line = line + '\t1'
+                fout.write('%s\t%s\t%s\n' % (id0, id1, '1'))
+                fout.write('%s\t%s\t%s\n' % (id1, id0, '1'))
 # blog()
 # arx()
 #cora()
 # blog_hidden()
-# blog_undi_hidden()
-flicker()
+blog_undi_hidden()
+# flicker()
+# youtube()
