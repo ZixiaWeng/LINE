@@ -77,9 +77,23 @@ def blog_undi_hidden():
             line = line.replace(",", "\t")
             line = line + '\t1'
             fout.write('%s\t%s\t%s\n' % (id0, id1, '1'))
+
+def flicker():
+    with open('flickr_adj_directed.csv') as fin, open('flickr_adj_undirected.txt', 'w') as fout:
+        for line in fin:
+            ls = line.rstrip().split(',')
+            print '@@@',ls
+            assert(len(ls)==2)
+            id0 = int(ls[0]) -1
+            id1 = int(ls[1]) -1
+            line = line.replace(",", "\t")
+            line = line + '\t1'
+            fout.write('%s\t%s\t%s\n' % (id0, id1, '1'))
             fout.write('%s\t%s\t%s\n' % (id1, id0, '1'))
+
 # blog()
 # arx()
 #cora()
 # blog_hidden()
-blog_undi_hidden()
+# blog_undi_hidden()
+flicker()
