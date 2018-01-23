@@ -7,12 +7,12 @@ def concat():
 # # b.reshape(,200)
 #     np.save(sys.argv[4],b)
     x = convert_embed_to_np(sys.argv[1])
-    y = convert_embed_to_np(sys.argv[2])
-    print '@@@', x.shape, y.shape
-    result = np.concatenate((x, y), axis=1)
-    print result.shape
-    np.save(sys.argv[3], result)
-    np.savetxt(sys.argv[4],result)
+    # y = convert_embed_to_np(sys.argv[2])
+    # print '@@@', x.shape, y.shape
+    # result = np.concatenate((x, y), axis=1)
+    # print result.shape
+    np.save(sys.argv[2], x)
+    # np.savetxt(sys.argv[3],x)
 
 
 def convert_embed_to_np(emb_file, ignore_last=False):

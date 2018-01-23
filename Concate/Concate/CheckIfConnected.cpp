@@ -2,9 +2,9 @@
 #include <list>
 #include <stack>
 #include <fstream>
-std::ifstream infile("test_adj_undirected.txt");
+std::ifstream infile("blog_adj_directed.txt");
 // Storage for visited nodes
-bool visited[ 1000000 ];
+bool visited[ 10000000 ];
 
 class Graph
 {
@@ -150,13 +150,13 @@ int main()
   
   // Example IV: cora graph
   //
-  Graph cora( 2708, false );
+  Graph blog( 10312, false );
   int a,b;
   while (infile >> a >> b)
   {
-	cora.addEdge(a, b);
+	blog.addEdge(a, b);
   }
-  cora.isCon() ? std::cout << "cora: Yes\n" :
-  std::cout << "cora: No\n";
+  blog.isCon() ? std::cout << "blog: Yes\n" :
+  std::cout << "blog: No\n";
   return 0;
 }
